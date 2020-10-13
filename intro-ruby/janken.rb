@@ -3,6 +3,7 @@ class Player
     puts "Please enter a number"
     puts "[0]:Rock\n[1]:Scissors\n[2]:Paper"
     player_hand = gets.chomp
+
     while true
       if player_hand == "0" || player_hand == "1" || player_hand == "2"
         return player_hand.to_i
@@ -29,7 +30,7 @@ class Janken
     while true
       if player_hand == enemy_hand
         puts "Other player is #{janken[enemy_hand]}. It's equal."
-        return true
+        return  self.pon(Player.new.hand, Enemy.new.hand)
       elsif (player_hand == 0 && enemy_hand == 1) || (player_hand == 1 && enemy_hand == 2) || (player_hand == 2 && enemy_hand == 0)
         puts "Other player is #{janken[enemy_hand]}. You win."
         return false
