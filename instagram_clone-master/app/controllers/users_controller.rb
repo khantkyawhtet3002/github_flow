@@ -40,13 +40,13 @@ before_action :set_user, only: [:show, :edit, :update, :favorites]
 
 
  private
-  def user_params
-    params.require(:user).permit(:name, :email, :password,
+ def user_params
+  params.require(:user).permit(:name, :email, :password,
                                  :password_confirmation,
                                  :image)
-  end
+ end
 
-  def set_user
+ def set_user
     @user = User.find(params[:id])
-  end
+ end
 end

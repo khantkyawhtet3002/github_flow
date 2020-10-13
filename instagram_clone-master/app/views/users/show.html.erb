@@ -6,8 +6,7 @@
     <strong>Profile Picture:</strong>
     <br>
     <%= image_tag @user.image.url if @user.image? %>
-  </p>
-  <br>
+  </p><br>
   <button type="button" class="btn"><%= link_to 'Edit', edit_user_path %></button>
   <button type="button" class="btn"><%= link_to 'Your Posts', pictures_path %></button>
   <button type="button" class="btn"><%= link_to("Favorites", "/users/#{@user.id}/favorites") %></button>

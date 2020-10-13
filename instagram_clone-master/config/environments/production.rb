@@ -7,7 +7,7 @@ Rails.application.configure do
   config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
   config.assets.js_compressor = :uglifier
   config.assets.css_compressor = :sass
-  config.assets.compile = false
+  config.assets.compile = true
   config.active_storage.service = :local
   config.log_level = :debug
   config.log_tags = [ :request_id ]
@@ -23,4 +23,6 @@ Rails.application.configure do
   end
 
   config.active_record.dump_schema_after_migration = false
+  config.action_mailer.default_url_options = { host: 'https://secure-lowlands-15679.herokuapp.com' }
+  config.action_mailer.delivery_method = :letter_opener_web
 end
